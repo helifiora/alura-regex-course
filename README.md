@@ -1,0 +1,3 @@
+# Curso de Expressão Regular da Alura
+
+Aplicação para fazer o curso, encontrar padrões, etc...

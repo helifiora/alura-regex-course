@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expressões Regulares</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header__container">
+            <h1 class="header__title">Expressões Regulares</h1>
+        </div>
+    </header>
+
+    <section class="section" style="margin-top: 24px;">
+        <div class="section__container">
+
+            <form class="form" id="form">
+
+                <div class="form__field">
+                    <label for="target" class="form__label">Target</label>
+                    <input id="target" name="target" type="text" class="form__input" placeholder="Digite um texto"
+                        autocomplete="off" autofocus required />
+                </div>
+
+                <div class="form__field">
+                    <label for="pattern" class="form__label">Pattern</label>
+                    <input id="pattern" class="form__input" type="text" name="pattern" placeholder="Digite o padrão"
+                        autocomplete="off" required />
+                </div>
+
+                <div>
+                    <button class="form__button" type="submit">Executar Regex</button>
+                </div>
+
+
+            </form>
+
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section__container">
+
+            <div class="result">
+                <div class="result__field">
+                    <label class="result__label" for="result">Resultados</label>
+                    <input class="result__input" id="result" readonly />
+                </div>
+
+                <div class="result__field">
+                    <label for="highlight" class="result__label">Highlight</label>
+                    <div id="highlight" class="result__highlight">&nbsp;</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+
+</html>
