@@ -1,26 +1,27 @@
 interface Options {
-    pattern: RegExp;
+    groups?: boolean;
 }
 
 interface Output {
-    indexes: [number, number][]
+    indexes: [number, number][];
+    groups: string[];
 }
 
 export class FindOccurrences {
 
-    private readonly pattern: RegExp;
 
     constructor(options: Options) {
-        this.pattern = options.pattern;
     }
 
-    public execute(value: string): Output {
-        const output: Output = { indexes: [] }
+    public execute(pattern: string, value: string): Output {
+        const regex = new RegExp(pattern, 'g');
+        const output: Output = { indexes: [], groups: [] };
         let result: RegExpExecArray | null = null
-        while (result = this.pattern.exec(value)) {
+        while (result = regex.exec(value)) {
             const firstIndex = result.index;
-            const lastIndex = this.pattern.lastIndex;
+            const lastIndex = regex.lastIndex;
             output.indexes.push([firstIndex, lastIndex]);
+            output.groups?.push(result.join(' ||| '));
         }
 
         return output

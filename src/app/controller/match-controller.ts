@@ -12,7 +12,7 @@ export class MatchController implements Observer {
     }
 
     public update(value: OccurrencesMessage): void {
-        const text = value.occurrences.map(s => `[${s[0]}, ${s[1]}]`).join(' ');
+        const text = value.groups.join(' ||| ');
         this.input.value = text;
     }
 }

@@ -27,9 +27,9 @@ export class FormController implements Subject {
     public listenSubmit(): void {
         this.fieldForm.addEventListener('submit', event => {
             event.preventDefault();
-            const findOccurrences = new FindOccurrences({ pattern: new RegExp(this.fieldPattern.value, 'g') });
-            const result = findOccurrences.execute(this.fieldTarget.value);
-            this.notify(new OccurrencesMessage(result.indexes, this.fieldTarget.value));
+            const findOccurrences = new FindOccurrences({ groups: true });
+            const result = findOccurrences.execute(this.fieldPattern.value, this.fieldTarget.value);
+            this.notify(new OccurrencesMessage(result.indexes, this.fieldTarget.value, result.groups));
         })
     }
 
